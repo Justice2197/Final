@@ -1,0 +1,30 @@
+<h1>Mascotas</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Raza</th>
+    <th>Descripción</th>
+    <th>Estado</th>
+    <th>Listar</th>
+    <th>Agregar</th>
+    <th>Eliminar</th>
+    </tr>
+</thead>
+<body>
+    {% for book in object_list %}
+    <tr>>
+    <td>{{ mascota.nombre }}</td>
+    <td>{{ mascota.raza }}</td>
+    <td>{{ mascota.descripcion }}</td>
+    <td>{{ mascota.estado }}</td>
+    <td><a href="{% url "mascota_view" mascota.id %}">Listar</a></td>
+    <td><a href="{% url "mascota_edit" mascota.id %}">Agregar</a></td>
+    <td><a href="{% url "mascota_delete" mascota.id %}">Eliminar</a></td>
+    </tr>
+    {% endfor %}
+</body>
+</table>
+
+<a href="{% url "mascota_new" %}">Agregar Mascota</a>
